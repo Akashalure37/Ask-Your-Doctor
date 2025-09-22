@@ -26,7 +26,13 @@ import com.app.service.intf.PatientServiceIntf;
 
 @RestController
 @RequestMapping("/admin")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(
+    origins = {
+        "http://localhost:3000",     // local React dev server
+        "https://ask-your-doctor.vercel.app" // deployed Vercel app
+    },
+    allowedHeaders = "*"
+)
 public class AdminController {
 
 	// dependencies added in constructor by @Autowired
