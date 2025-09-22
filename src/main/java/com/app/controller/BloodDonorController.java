@@ -14,7 +14,13 @@ import com.app.service.intf.BloodDonorIntf;
 
 @RestController
 @RequestMapping("/blood_donation")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(
+    origins = {
+        "http://localhost:3000",     // local React dev server
+        "https://ask-your-doctor.vercel.app" // deployed Vercel app
+    },
+    allowedHeaders = "*"
+)
 public class BloodDonorController {
 
 	@Autowired
