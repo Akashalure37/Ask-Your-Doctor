@@ -17,7 +17,13 @@ import com.app.service.intf.HomeServiceIntf;
 
 @RestController
 @RequestMapping("/home")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(
+    origins = {
+        "http://localhost:3000",     // local React dev server
+        "https://ask-your-doctor.vercel.app" // deployed Vercel app
+    },
+    allowedHeaders = "*"
+)
 public class HomeController {
 
 	// dependency : homeService
