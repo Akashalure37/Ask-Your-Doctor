@@ -13,7 +13,7 @@ FROM eclipse-temurin:17-jdk
 WORKDIR /usr/app
 
 # Copy the specific JAR from the build stage
-COPY --from=build /app/target/Doctor_Patient_App-1.0-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/Doctor_Patient_App-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
